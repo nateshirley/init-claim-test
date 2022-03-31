@@ -19,7 +19,7 @@ describe("if-needed-test", () => {
     );
 
     const first = await program.methods
-      .claim(false)
+      .claim()
       .accounts({
         payer: provider.wallet.publicKey,
         claimAccount: claimAcctAddress,
@@ -34,7 +34,7 @@ describe("if-needed-test", () => {
     console.log(claimAcct);
 
     const second = await program.methods
-      .claim(true)
+      .claim()
       .accounts({
         payer: provider.wallet.publicKey,
         claimAccount: claimAcctAddress,

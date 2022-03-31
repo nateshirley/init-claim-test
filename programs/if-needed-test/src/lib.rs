@@ -12,7 +12,7 @@ pub mod if_needed_test {
 
     use super::*;
 
-    pub fn claim(ctx: Context<Claim>, should_panic: bool) -> Result<()> {
+    pub fn claim(ctx: Context<Claim>) -> Result<()> {
         let mut did_init = false;
         if ctx.accounts.claim_account.data_len() == 0 {
             let (address, bump) = Pubkey::find_program_address(
